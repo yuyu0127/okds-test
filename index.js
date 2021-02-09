@@ -33,15 +33,13 @@ function onPlayerPlaybackQualityChange(event) { }
 function onPlayerStateChange(event) { }
 function onPlayerError(event) { }
 
-// const liveIds = [
-//   "5qap5aO4i9A",
-//   "DWcJFNfaw9c"
-// ]
-// let index = 0
+const liveIds = [
+  "5qap5aO4i9A",
+  "DWcJFNfaw9c"
+]
+let index = 0
 
-// function changeSource() {
-//   index = (index + 1) % liveIds.length
-//   const url = `https://www.youtube.com/embed/${liveIds[index]}?modestbranding=1&autoplay=1&mute=1&playsinline=1&controls=1`
-//   console.log(url)
-//   document.getElementById('iframe-livestream').contentWindow.location.replace(url)
-// }
+function changeSource() {
+  index = (index + 1) % liveIds.length
+  ytPlayer.loadVideoById(liveIds[index])
+}
