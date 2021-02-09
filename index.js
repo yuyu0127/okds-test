@@ -26,9 +26,9 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
+  event.target.mute()
   event.target.playVideo()
 }
-
 function onPlayerPlaybackQualityChange(event) { }
 function onPlayerStateChange(event) { }
 function onPlayerError(event) { }
