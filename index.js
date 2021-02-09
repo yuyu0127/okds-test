@@ -11,14 +11,9 @@ function onYouTubeIframeAPIReady() {
       height: 390,
       videoId: '5qap5aO4i9A',
       playerVars: {
-        controls: 0,
         disablekb: 0,
-        fs: 0,
-        iv_load_policy: 3,
         modestbranding: 1,
         playsinline: 1,
-        rel: 0,
-        showinfo: 0
       },
       events: {
         'onReady': onPlayerReady,
