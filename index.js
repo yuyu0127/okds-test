@@ -10,12 +10,16 @@ function onYouTubeIframeAPIReady() {
       width: 640,
       height: 390,
       videoId: '5qap5aO4i9A',
-      playerVars: { 'autoplay': 1, 'controls': 0 },
+      playerVars: {
+        'autoplay': 1,
+        'controls': 0,
+        'playsinline': 1,
+      },
       events: {
         'onReady': onPlayerReady,
         'onPlaybackQualityChange': onPlayerPlaybackQualityChange,
         'onStateChange': onPlayerStateChange,
-        'onError': onPlayerError
+        'onError': onPlayerError,
       }
     }
   );
