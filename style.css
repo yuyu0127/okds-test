@@ -38,7 +38,22 @@ body {
     height  : 100%;
 }
 
-.change-button {
+.button-container {
+    display: flex;
+}
+
+.button-container input {
+    flex-grow: 1;
+    margin   : 10px;
+    height   : 100px;
+}
+
+h2 {
+    font-size       : 1em;
+    text-align      : center;
+    line-height     : 2em;
+    font-weight     : normal;
+    margin          : 0;
     width           : 100%;
     height          : 2em;
     border          : none;
