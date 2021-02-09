@@ -43,7 +43,7 @@ let index = 0
 function changeSource() {
   index = (index + 1) % liveIds.length
   const id = liveIds[index]
-  const chatUrl = `https://www.youtube.com/live_chat?&v=${id}&embed_domain=127.0.0.1`
+  const chatUrl = `https://www.youtube.com/live_chat?&v=${id}&embed_domain=yuyu0127.github.io`
   ytPlayer.loadVideoById(id)
   document.getElementById('iframe-chat').src = chatUrl
 }
