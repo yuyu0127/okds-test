@@ -43,7 +43,14 @@ let index = 0
 function changeSource() {
   index = (index + 1) % liveIds.length
   const id = liveIds[index]
-  // const chatUrl = `https://www.youtube.com/live_chat?&v=${id}&embed_domain=${window.location.host.split(':')[0]}`
+  const chatUrl = `https://www.youtube.com/live_chat?&v=${id}&embed_domain=${window.location.host.split(':')[0]}`
   ytPlayer.loadVideoById(id)
-  // document.getElementById('iframe-chat').src = chatUrl
+  document.getElementById('iframe-chat').src = chatUrl
+}
+
+function overwriteUserAgent() {
+  this.contentWindow.navigator = {
+    userAgent:
+      "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13"
+  }
 }

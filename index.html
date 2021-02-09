@@ -15,11 +15,16 @@
     <div class="livestream-container">
       <div id="iframe-livestream"></div>
     </div>
-    <!--
-       <div class="chat-container">
-      <iframe id="iframe-chat" src="" frameborder="0"></iframe>
-    </div> 
-  -->
+
+    <div class="chat-container">
+      <iframe
+        id="iframe-chat"
+        src=""
+        frameborder="0"
+        onload="overwriteUserAgent()"
+      ></iframe>
+    </div>
+
     <input
       class="change-button"
       type="button"
