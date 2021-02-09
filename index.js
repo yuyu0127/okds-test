@@ -27,6 +27,7 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
+  changeSource()
   event.target.mute()
   event.target.playVideo()
 }
@@ -46,11 +47,4 @@ function changeSource() {
   const chatUrl = `https://www.youtube.com/live_chat?&v=${id}&embed_domain=${window.location.host.split(':')[0]}`
   ytPlayer.loadVideoById(id)
   document.getElementById('iframe-chat').src = chatUrl
-}
-
-function overwriteUserAgent() {
-  this.contentWindow.navigator = {
-    userAgent:
-      "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13"
-  }
 }
