@@ -1,3 +1,19 @@
+function setUserAgent(window, userAgent) {
+  if (window.navigator.userAgent != userAgent) {
+    var userAgentProp = { get: () => userAgent }
+    try {
+      Object.defineProperty(window.navigator, 'userAgent', userAgentProp)
+    } catch (e) {
+      window.navigator = Object.create(navigator, {
+        userAgent: userAgentProp
+      })
+    }
+  }
+  console.log(window.navigator)
+}
+const ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.99 Safari/537.36'
+setUserAgent(document.querySelector('#iframe-chat').contentWindow, ua)
+
 const tag = document.createElement('script')
 tag.src = 'https://www.youtube.com/iframe_api'
 const firstScriptTag = document.getElementsByTagName('script')[0]
