@@ -1,7 +1,8 @@
-const tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-const firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+const tag = document.createElement('script')
+tag.src = 'https://www.youtube.com/iframe_api'
+const firstScriptTag = document.getElementsByTagName('script')[0]
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+
 let ytPlayer
 function onYouTubeIframeAPIReady() {
   ytPlayer = new YT.Player(
@@ -22,7 +23,7 @@ function onYouTubeIframeAPIReady() {
         'onError': onPlayerError,
       }
     }
-  );
+  )
 }
 
 function onPlayerReady(event) {
@@ -34,12 +35,15 @@ function onPlayerStateChange(event) { }
 function onPlayerError(event) { }
 
 const liveIds = [
-  "5qap5aO4i9A",
-  "DWcJFNfaw9c"
+  '5qap5aO4i9A',
+  'DWcJFNfaw9c'
 ]
 let index = 0
 
 function changeSource() {
   index = (index + 1) % liveIds.length
-  ytPlayer.loadVideoById(liveIds[index])
+  const id = liveIds[index]
+  const chatUrl = `https://www.youtube.com/live_chat?&v=${id}&embed_domain=127.0.0.1`
+  ytPlayer.loadVideoById(id)
+  document.getElementById('iframe-chat').src = chatUrl
 }
